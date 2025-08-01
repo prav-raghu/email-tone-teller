@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "⚡ Run Sentiment API (FastAPI)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--reload", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend/sentiment-api",
+      "envFile": "${workspaceFolder}/backend/sentiment-api/.env",
+      "console": "integratedTerminal"
+    }
+  ]
+}

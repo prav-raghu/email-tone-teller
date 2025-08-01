@@ -1,0 +1,21 @@
+name: Manga Chapter Checker
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # every 6 hours
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with: python-version: "3.x"
+      - name: Install
+        run: pip install requests
+      - name: Run checker
+        env:
+          MAILGUN_DOMAIN: ${{ secrets.MAILGUN_DOMAIN }}
+          MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python manga_notifier.py

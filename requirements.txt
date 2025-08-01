@@ -1,0 +1,9 @@
+fastapi
+certifi
+charset-normalizer
+idna
+python-dotenv
+requests
+urllib3
+uvicorn
+openai

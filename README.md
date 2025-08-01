@@ -43,3 +43,6 @@ email-tone-teller/
 ├── requirements.txt         # Python dependencies
 └── README.md
 ```
+## Running the projects
+
+pip install -r requirements.txt
