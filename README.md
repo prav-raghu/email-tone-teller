@@ -20,8 +20,8 @@ Designed for agencies, freelancers, support teams, and professionals who deal wi
 ## Powered By
 
 - Python (FastAPI backend)
-- OpenAI / Claude (LLM APIs)
-- Mailgun or Gmail API (for live email)
+- OpenAI / Claude / LLama via TogetherAPI (LLM APIs)
+- Mailgun (for live email)
 - Slack Bolt SDK & Microsoft Graph (for bot integrations)
 - React / HTMX frontend (optional phase)
 
@@ -30,19 +30,42 @@ Designed for agencies, freelancers, support teams, and professionals who deal wi
 ```
 email-tone-teller/
 ├── backend/
-│   ├── main.py              # FastAPI app
-│   ├── routes/analyze.py    # Email tone/urgency endpoint
-│   └── utils/llm.py         # LLM prompt + call logic
-├── slackbot/
-│   └── handler.py           # Slack events
-├── teamsbot/
-│   └── handler.py           # Microsoft Teams connector
+│   ├── api-gateway/
+│   ├── customer-api/
+│   └── sentiment-api/
+│       └── app/
+│           ├── config/
+│           │   ├── llm_clients/
+│           │   └── providers/
+│           ├── dtos/
+│           ├── routes/
+│           ├── services/
+│           ├── utilities/
+│           └── main.py
+│       ├── logs/
+│       └── tests/
+├── bots/
+│   ├── slack/
+│   ├── teams/
+│   └── whatsapp/
 ├── frontend/
-│   └── index.html           # Web UI (optional)
-├── .env.example             # Environment variable template
-├── requirements.txt         # Python dependencies
-└── README.md
+│   └── customer-web/
+├── .env
+├── .env.example
+├── .gitignore
+├── README.md
+└── requirements.txt
+
 ```
 ## Running the projects
-
+```
+python -m venv .venv
+source .venv/bin/activate   # or .venv\Scripts\activate on Windows
 pip install -r requirements.txt
+```
+
+## Future Ideas
+- Fallback logic (OpenAI → Claude → LLaMA)
+- Slack + Teams notification integration
+- Attachments summary (PDF, DOCX)
+- Web frontend with email history
