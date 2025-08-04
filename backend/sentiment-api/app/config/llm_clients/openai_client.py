@@ -7,7 +7,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-def analyze_with_openai(email_text: str):
+def analyze(email_text: str):
     prompt = f"""
 You are a helpful assistant. Analyze the following client email and extract:
 1. The tone (e.g., friendly, annoyed, neutral, passive-aggressive)

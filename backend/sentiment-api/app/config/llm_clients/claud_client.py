@@ -1,4 +1,4 @@
-def analyze_with_claude(text: str):
+def analyze():
     return {
         "tone": "Neutral",
         "urgency": "Low",
