@@ -2,7 +2,8 @@ from pydantic import BaseModel
 
 
 class EmailRequest(BaseModel):
-    text: str
+    subject: str
+    body: str
 
 
 class SentimentResponse(BaseModel):
