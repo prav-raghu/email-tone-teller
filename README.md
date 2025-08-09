@@ -1,6 +1,8 @@
 
 # Email Tone Teller (ETT)
 
+<img src="./assets/banner.png" width="600">
+
 **Email Tone Teller (ETT)** is a smart assistant that reads client emails and helps you understand:
 
 - The tone (friendly, annoyed, passive-aggressive, etc.)
