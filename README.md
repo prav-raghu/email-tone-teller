@@ -2,6 +2,7 @@
 # Email Tone Teller (ETT)
 
 **Email Tone Teller (ETT)** is a smart assistant that reads client emails and helps you understand:
+
 - The tone (friendly, annoyed, passive-aggressive, etc.)
 - The urgency level
 - Suggested replies
@@ -20,14 +21,14 @@ Designed for agencies, freelancers, support teams, and professionals who deal wi
 ## Powered By
 
 - Python (FastAPI backend)
-- OpenAI / Claude / LLama via TogetherAPI (LLM APIs)
+- OpenAI / Claude / LLama via Openrouter (LLM Models)
 - Mailgun (for live email)
 - Slack Bolt SDK & Microsoft Graph (for bot integrations)
 - React / HTMX frontend (optional phase)
 
 ## Planned Structure
 
-```
+```bash
 email-tone-teller/
 ├── backend/
 │   ├── api-gateway/
@@ -35,8 +36,7 @@ email-tone-teller/
 │   └── sentiment-api/
 │       └── app/
 │           ├── config/
-│           │   ├── llm_clients/
-│           │   └── providers/
+│           │   └── llm_clients/
 │           ├── dtos/
 │           ├── routes/
 │           ├── services/
@@ -57,14 +57,17 @@ email-tone-teller/
 └── requirements.txt
 
 ```
+
 ## Running the projects
-```
+
+```bash
 python -m venv .venv
 source .venv/bin/activate   # or .venv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
 
 ## Future Ideas
+
 - Fallback logic (OpenAI → Claude → LLaMA)
 - Slack + Teams notification integration
 - Attachments summary (PDF, DOCX)
